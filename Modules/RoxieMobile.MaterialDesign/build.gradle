@@ -21,6 +21,7 @@ allprojects {
     repositories {
         google()
         mavenCentral()
+        maven { url 'https://jitpack.io' }
     }
 }
 
@@ -40,7 +41,7 @@ ext {
     ANDROID_ANNOTATIONS_VERSION = '4.6.0'
     ANDROID_SUPPORT_VERSION = '28.0.0'
     JUNIT_VERSION = '4.12'
-    ROXIE_ANDROID_COMMONS_VERSION = '0.9.1'
+    ROXIE_ANDROID_COMMONS_VERSION = '0.9.3'
 }
 
 task clean(type: Delete) {
