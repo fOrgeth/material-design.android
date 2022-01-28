@@ -2,6 +2,17 @@ apply plugin: 'com.android.library'
 apply plugin: 'com.jakewharton.butterknife'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-kapt'
+apply plugin: 'maven-publish'
+
+afterEvaluate {
+    publishing {
+        publications {
+            release(MavenPublication) {
+                from components.release
+            }
+        }
+    }
+}
 
 android {
     compileSdkVersion rootProject.ext.compileSdkVersion
@@ -41,25 +52,22 @@ android {
 dependencies {
 
     // Kotlin
-    api "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$KOTLIN_VERSION"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$KOTLIN_VERSION"
 
     // Android Annotations
     final ANDROID_ANNOTATIONS_VERSION = rootProject.ext.ANDROID_ANNOTATIONS_VERSION
     kapt "org.androidannotations:androidannotations:$ANDROID_ANNOTATIONS_VERSION"
-    api "org.androidannotations:androidannotations-api:$ANDROID_ANNOTATIONS_VERSION"
+    implementation "org.androidannotations:androidannotations-api:$ANDROID_ANNOTATIONS_VERSION"
 
     // Android Support
     final ANDROID_SUPPORT_VERSION = rootProject.ext.ANDROID_SUPPORT_VERSION
-    api "com.android.support:design:$ANDROID_SUPPORT_VERSION"
+    implementation "com.android.support:design:$ANDROID_SUPPORT_VERSION"
 
     // Android Commons (Roxie Mobile)
     final ROXIE_ANDROID_COMMONS_VERSION = rootProject.ext.ROXIE_ANDROID_COMMONS_VERSION
-    api "com.roxiemobile.android:android-commons:$ROXIE_ANDROID_COMMONS_VERSION"
+    implementation "com.roxiemobile.android:android-commons:$ROXIE_ANDROID_COMMONS_VERSION"
 
     // JUnit
     final JUNIT_VERSION = rootProject.ext.JUNIT_VERSION
     testImplementation "junit:junit:$JUNIT_VERSION"
 }
-
-// Deploy to Bintray
-apply from: 'tools/push.gradle'
