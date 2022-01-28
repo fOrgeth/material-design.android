@@ -52,20 +52,20 @@ android {
 dependencies {
 
     // Kotlin
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$KOTLIN_VERSION"
+    api "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$KOTLIN_VERSION"
 
     // Android Annotations
     final ANDROID_ANNOTATIONS_VERSION = rootProject.ext.ANDROID_ANNOTATIONS_VERSION
     kapt "org.androidannotations:androidannotations:$ANDROID_ANNOTATIONS_VERSION"
-    implementation "org.androidannotations:androidannotations-api:$ANDROID_ANNOTATIONS_VERSION"
+    api "org.androidannotations:androidannotations-api:$ANDROID_ANNOTATIONS_VERSION"
 
     // Android Support
     final ANDROID_SUPPORT_VERSION = rootProject.ext.ANDROID_SUPPORT_VERSION
-    implementation "com.android.support:design:$ANDROID_SUPPORT_VERSION"
+    api "com.android.support:design:$ANDROID_SUPPORT_VERSION"
 
     // Android Commons (Roxie Mobile)
     final ROXIE_ANDROID_COMMONS_VERSION = rootProject.ext.ROXIE_ANDROID_COMMONS_VERSION
-    implementation "com.github.fOrgeth:android-commons.android:$ROXIE_ANDROID_COMMONS_VERSION"
+    api "com.github.fOrgeth:android-commons.android:$ROXIE_ANDROID_COMMONS_VERSION"
 
     // JUnit
     final JUNIT_VERSION = rootProject.ext.JUNIT_VERSION
