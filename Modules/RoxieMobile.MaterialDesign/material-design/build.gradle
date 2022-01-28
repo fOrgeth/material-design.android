@@ -65,7 +65,7 @@ dependencies {
 
     // Android Commons (Roxie Mobile)
     final ROXIE_ANDROID_COMMONS_VERSION = rootProject.ext.ROXIE_ANDROID_COMMONS_VERSION
-    implementation "com.roxiemobile.android:android-commons:$ROXIE_ANDROID_COMMONS_VERSION"
+    implementation "com.github.fOrgeth:android-commons.android:$ROXIE_ANDROID_COMMONS_VERSION"
 
     // JUnit
     final JUNIT_VERSION = rootProject.ext.JUNIT_VERSION
