@@ -4,6 +4,9 @@ buildscript {
     repositories {
         google()
         mavenCentral()
+
+        // ButterKnife
+        maven { url 'https://oss.sonatype.org/content/repositories/snapshots' }
     }
 
     dependencies {
